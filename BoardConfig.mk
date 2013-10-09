@@ -39,7 +39,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 TARGET_OTA_ASSERT_DEVICE := SHV-E120K,dalikt
 
 # Kernel
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 loglevel=4
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true zcache
 BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01400000
@@ -54,37 +54,20 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 941621248
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-# Custom recovery font
+# Configs for recovery
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"font_7x16.h\"
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"font_10x18.h\"
-
 BOARD_RECOVERY_CHAR_WIDTH := 720
 BOARD_RECOVERY_CHAR_HEIGHT := 1280
-
-# Cwm touch recovery
 #BOARD_TOUCH_RECOVERY := true
-
-# Override bootable/recovery/minui/graphics.c
-#BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/dalikt/recovery/graphics.c
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Suppress the WIPE command since it can brick our EMMC
 BOARD_SUPPRESS_EMMC_WIPE := true
-
-# Workaround for glitches while cropping bypass layers
-# TODO (orphaned) TARGET_NO_BYPASS_CROPPING := true
-
-# MTP
-# TODO (orphaned) BOARD_MTP_DEVICE := "/dev/mtp_usb"
-
-# Audio
-# TODO (orphaned) TARGET_USES_QCOM_LPA := true
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-# TODO (orphaned) BOARD_HAS_SAMSUNG_VOLUME_BUG := true
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true

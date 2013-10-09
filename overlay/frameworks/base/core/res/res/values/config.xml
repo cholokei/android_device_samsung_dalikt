@@ -43,8 +43,9 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>15</item>
+        <item>30</item>
         <item>150</item>
+        <item>600</item>
         <item>1500</item>
         <item>15000</item>
     </integer-array>
@@ -54,10 +55,11 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>40</item>
-        <item>100</item>
-        <item>150</item>
-        <item>210</item>
+        <item>34</item>
+        <item>48</item>
+        <item>84</item>
+        <item>103</item>
+        <item>191</item>
         <item>255</item>
     </integer-array>
 
@@ -68,6 +70,7 @@
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>255</item>
         <item>255</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -83,10 +86,11 @@
         <item>0</item>
         <item>0</item>
         <item>0</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">20</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
@@ -160,16 +164,7 @@
     <bool name="config_ui_enableFadingMarquee">true</bool>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
-
-    <!-- Default color for notification LED is white. -->
-    <color name="config_defaultNotificationColor">#ffffffff</color>
-
-    <!-- Default LED on time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOn">1000</integer>
-
-    <!-- Default LED off time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOff">9000</integer>
+    <bool name="config_intrusiveNotificationLed">false</bool>
 
     <!-- The VoiceMail default value is displayed to my own number if it is true -->
     <bool name="config_telephony_use_own_number_for_voicemail">true</bool>
@@ -178,6 +173,6 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- Our amoled doesn't animate well. -->
+    <!-- Enable the electron beam animation -->
     <bool name="config_animateScreenLights">false</bool>
 </resources>

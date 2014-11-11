@@ -31,8 +31,8 @@ BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true zcache
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01400000
-TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-TARGET_KERNEL_CONFIG        := cyanogenmod_dalikt_defconfig
+TARGET_KERNEL_SOURCE        := kernel/samsung/dalikt
+TARGET_KERNEL_CONFIG        := caf_dalikt_defconfig
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

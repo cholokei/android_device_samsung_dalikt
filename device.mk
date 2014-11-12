@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/samsung/dalikt/dalikt-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/dalikt/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
@@ -33,9 +33,9 @@ TARGET_SCREEN_HEIGHT := 1280
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc
+    device/samsung/dalikt/ramdisk/init.qcom.rc:root/init.qcom.rc \
+    device/samsung/dalikt/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc
 
 # Do not use common init.qcom.rc code
 NO_COMMON_INIT_QCOM_RC := true
@@ -48,8 +48,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd \
-    $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/bin/bcm4330B1.hcd
+    device/samsung/dalikt/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd \
+    device/samsung/dalikt/firmware/bcm4330B1.hcd:system/bin/bcm4330B1.hcd
 
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)

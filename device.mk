@@ -51,10 +51,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd \
     $(LOCAL_PATH)/firmware/bcm4330B1.hcd:system/bin/bcm4330B1.hcd
 
-# init.d scripts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/root/system/etc/init.d/91fixoverlays:system/etc/init.d/91fixoverlays
-
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
